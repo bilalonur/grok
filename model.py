@@ -109,6 +109,7 @@ def apply_rules(rules):
     return _apply_rules
 
 
+
 TRANSFORMER_PARTITION_RULES = [
     # attention
     (("multi_head_attention", "(query|key|value)", "w"), P("data", "model")),
@@ -174,7 +175,7 @@ LM_PARTITION_RULES = [
 ]
 TOP_K = 8
 
-
+#kv memory class
 class KVMemory(NamedTuple):
     k: Optional[jax.Array]
     v: Optional[jax.Array]
